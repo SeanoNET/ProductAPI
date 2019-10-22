@@ -9,3 +9,7 @@ NSwag was implemented based on [Get started with NSwag and ASP.NET Core](https:/
 You can view the Swagger UI by navigating to `https://localhost:<port>/swagger`
 
 A Swagger client was generated using [NSwagStudio](https://github.com/RicoSuter/NSwag/wiki/NSwagStudio) in `ProductClient`.
+
+## Docker
+
+This API run inside of a docker container, for more info see [Dockerize an ASP.NET Core application](https://docs.docker.com/engine/examples/dotnetcore/)
