@@ -12,4 +12,7 @@ A Swagger client was generated using [NSwagStudio](https://github.com/RicoSuter/
 
 ## Docker
 
-This API run inside of a docker container, for more info see [Dockerize an ASP.NET Core application](https://docs.docker.com/engine/examples/dotnetcore/)
+This API runs inside of a docker container, for more info see [Dockerize an ASP.NET Core application](https://docs.docker.com/engine/examples/dotnetcore/)
+
+## Auth
+Identity Server 4 has been configured see [Identity Server Overview](http://docs.identityserver.io/en/latest/quickstarts/0_overview.html). Provider server can be found in []() or you can use the [Demo Server](http://docs.identityserver.io/en/latest/intro/test.html)

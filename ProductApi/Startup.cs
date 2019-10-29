@@ -34,6 +34,16 @@ namespace ProductApi
             // Register Swagger services
             services.AddSwaggerDocument();
             services.AddControllers();
+
+            // Adds the auth services to DI and configures Bearer as the default scheme
+            services.AddAuthentication("Bearer")
+            .AddJwtBearer("Bearer", options =>
+            {
+                options.Authority = "http://localhost:5000";
+                options.RequireHttpsMetadata = false;
+
+                options.Audience = "productapi";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,10 +58,13 @@ namespace ProductApi
             app.UseOpenApi();
             app.UseSwaggerUi3();
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 
+            // Adds the auth middleware to the pipeline so auth will be performed automatically on every request
+            app.UseAuthentication();
+           // Add authorization middleware to make sure our API endpoints connot be accessed by anonymous clients
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
